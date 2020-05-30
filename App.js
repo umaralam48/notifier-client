@@ -1,19 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React, { Fragment } from "react";
+import { SafeAreaView, StatusBar } from "react-native";
+import { ThemeProvider } from "react-native-elements";
+import MainScreen from "./src/MainScreen";
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+	return (
+		<ThemeProvider>
+			<Fragment>
+				<StatusBar barStyle="dark-content" />
+				<SafeAreaView style={{ flex: 1 }}>
+					<MainScreen />
+				</SafeAreaView>
+			</Fragment>
+		</ThemeProvider>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
